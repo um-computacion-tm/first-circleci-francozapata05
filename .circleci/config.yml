@@ -1,5 +1,8 @@
+// Un pipeline es un archivo de configuración que indica cuales 
+//son los a seguir para hacer una construccion del proyecto en que estoy trabajando
+
 version: 2.1
-jobs:
+jobs: 
   build:
     docker:
       - image: cimg/python:3.10.1
@@ -9,5 +12,5 @@ jobs:
           name: Install dependencies
           command: pip install -r requirements.txt
       - run:
-          name: Running Tests
+          name: Run tests
           command: coverage run -m unittest && coverage xml && coverage report -m
